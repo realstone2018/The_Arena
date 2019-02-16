@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4575158664652622}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FeetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114066398581252468}
   - component: {fileID: 114771086158312850}
   - component: {fileID: 114628561706820642}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PennyPixel
   m_TagString: Player
   m_Icon: {fileID: 0}

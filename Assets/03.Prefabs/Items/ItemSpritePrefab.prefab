@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61428614654211742}
   - component: {fileID: 114695476631097086}
   m_Layer: 9
-  m_Name: ItemPrefab
+  m_Name: ItemSpritePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
