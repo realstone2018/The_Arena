@@ -14,7 +14,6 @@ public class ArenaCharacterController : NetworkBehaviour
     public Rigidbody2D rigid;
     public Animator animator;
 
-    // SyncVar 속성을 부여, 서버에서 값이 바뀌면 FlipSprite() 호출 
     [SyncVar(hook = "FlipSprite")]
     bool flip;
 
@@ -24,7 +23,7 @@ public class ArenaCharacterController : NetworkBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    // 점프 키를 계속 누르고 있을 때 더 높이 점프 (ex 할로우나이트)
+    // 점프 키를 계속 누르고 있을 때 더 높이 점프를 위한 변수들 (ex 할로우나이트)
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
@@ -52,6 +51,7 @@ public class ArenaCharacterController : NetworkBehaviour
                 jumpTimeCounter = jumpTime;
             }
 
+            // 점프 중일 때 Jump 키를 계속 누르고 있을 경우 jumpTime만큼 더 높이 올라 간다.
             if (Input.GetButton("Jump") && isJumping == true)
             {
                 if (jumpTimeCounter > 0)
@@ -69,7 +69,7 @@ public class ArenaCharacterController : NetworkBehaviour
             {
                 isJumping = false;
             }
-
+            
             CmdMoving(move);
         }
     }
@@ -101,6 +101,7 @@ public class ArenaCharacterController : NetworkBehaviour
     }
 
 
+    // CmdMoving() 함수에서 flip값이 변경되면 Syncvar Hook으로 인해 호출되어 클라이언트에도 적용
     [ClientCallback]
     void FlipSprite(bool newValue)
     {

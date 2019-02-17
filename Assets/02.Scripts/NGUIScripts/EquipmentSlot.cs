@@ -34,11 +34,8 @@ public class EquipmentSlot : MonoBehaviour {
                 usedItem.transform.localPosition = Vector2.zero;
 
             }
-
-            // 아이템의 부모를 바꾸고, 하위 위젯들에게 부모가 바꼈음을 알려 위젯을 새부모 하위에 다시 그린다. 
             dropped.transform.SetParent(gameObject.transform);
             dropped.transform.localPosition = Vector2.zero;
-
 
             NGUITools.MarkParentAsChanged(dropped);
         }

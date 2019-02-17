@@ -1717,7 +1717,7 @@ MonoBehaviour:
     relative: 0
     absolute: 116
   updateAnchors: 1
-  mColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
   mHeight: 100
@@ -1740,8 +1740,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Smooth
+  mAtlas: {fileID: 11400000, guid: 34d5687427588f84da66347c2ae59674, type: 2}
+  mSpriteName: "\uAC00\uBC29"
   mFillCenter: 1
 --- !u!65 &666350198
 BoxCollider:
@@ -7967,18 +7967,6 @@ Prefab:
     - target: {fileID: 4642812399550634, guid: 7d1b36ab5e423be48865dda6623b34d3, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317738617950474, guid: 7d1b36ab5e423be48865dda6623b34d3, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959060473057598, guid: 7d1b36ab5e423be48865dda6623b34d3, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317738617950474, guid: 7d1b36ab5e423be48865dda6623b34d3, type: 2}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1b36ab5e423be48865dda6623b34d3, type: 2}
