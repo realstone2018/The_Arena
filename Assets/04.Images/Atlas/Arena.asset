@@ -13,9 +13,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: f8c9c52cb66ca564284a52c30b875492, type: 2}
   mSprites:
+  - name: Boss
+    x: 0
+    y: 504
+    width: 602
+    height: 520
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 56
+    paddingRight: 64
+    paddingTop: 101
+    paddingBottom: 62
+  - name: Wall
+    x: 603
+    y: 682
+    width: 342
+    height: 342
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: "\uAC00\uBC29"
-    x: 451
-    y: 81
+    x: 603
+    y: 594
     width: 87
     height: 87
     borderLeft: 0
@@ -28,7 +54,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: "\uBC14\uC774\uD0B9 \uD5EC\uBA67"
     x: 0
-    y: 62
+    y: 53
     width: 450
     height: 450
     borderLeft: 0
@@ -41,7 +67,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: "\uC644\uC131"
     x: 451
-    y: 169
+    y: 160
     width: 312
     height: 343
     borderLeft: 0
