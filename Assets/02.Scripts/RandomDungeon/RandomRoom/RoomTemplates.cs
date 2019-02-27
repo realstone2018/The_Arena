@@ -21,6 +21,9 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject[] blockingWalls;
 
+    public delegate void ArrangementFinish();
+    public static ArrangementFinish CreateField; 
+
     // 방 갯수 조절 방법 
     // 1. RoomTemplates의 rooms의 Count가 조건에 만족할 때까지 다시 방 생성 
     // 2.RoomSpawner에서 rooms의 Count를 조건에 만족 할 때 까지만 방 생성, 이 후 방들은 CloseRoom으로 생성 
@@ -41,6 +44,8 @@ public class RoomTemplates : MonoBehaviour
                 {
                     NGUITools.AddChild(rooms[i], boss);
                     spawnedBoss = true;
+
+                    CreateField();
                 }
             }
         }

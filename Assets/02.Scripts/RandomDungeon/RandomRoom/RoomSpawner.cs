@@ -21,7 +21,7 @@ public class RoomSpawner : MonoBehaviour
 
     void Start()
     {
-        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        templates = GameObject.FindGameObjectWithTag("RoomTemplate").GetComponent<RoomTemplates>();
 
         // 방을 생성하기전 Block 여부 판단, Destoryer와 충돌여부 판단을 위해 일정시간 후 생성
         Invoke("Spawn", 0.15f);
