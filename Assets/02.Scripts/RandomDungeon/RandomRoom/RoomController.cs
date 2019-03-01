@@ -24,7 +24,7 @@ public class RoomController : MonoBehaviour
 
     private void CreateField()
     {
-        Vector2 setPosition = transform.position * 400f;
+        Vector2 setPosition = transform.position * 500f;
         createdField = Instantiate(fieldPrefab, setPosition, Quaternion.identity);
         createdField.transform.SetParent(grid);
     }

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 114743218483528350}
   - component: {fileID: 61580621519870824}
   m_Layer: 9
-  m_Name: LRT
+  m_Name: TLR
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
