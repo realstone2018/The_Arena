@@ -34,9 +34,9 @@ public class MoveFieldController : MonoBehaviour {
         Transform arrivedRoom = PlayerIcon.instance.transform.parent;
 
         // 이동한 방이 생성한 Field를 가져온다. 
-        GameObject nextField = arrivedRoom.GetComponent<RoomController>().createdField;
+        GameObject nextField = arrivedRoom.GetComponent<Room>().createdField;
         // FieldController의 movefield배열에서 transofrm.Position을 반환받아 저장
-        Vector3 outGatePos = nextField.GetComponent<FieldController>().GetGatePos(enterDirection);
+        Vector3 outGatePos = nextField.GetComponent<Field>().GetGatePos(enterDirection);
     
         // B -> T ,    T -> B ,   L -> R,    R 로 가면 -> L 에서 등장
         switch (enterDirection)

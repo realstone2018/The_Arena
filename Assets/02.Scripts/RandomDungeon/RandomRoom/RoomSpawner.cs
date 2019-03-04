@@ -29,16 +29,22 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn()
     {
+        GameObject spawnObj;
         GameObject selectedObj = SelectRoomOrWall();
-        GameObject spawnObj = NGUITools.AddChild(templates.transform, selectedObj);
 
         // room을 생성하는 경우 생성한 roomd의 Spawner들 Id 지정
         if (blocked == false)
         {
+            spawnObj = NGUITools.AddChild(templates.transform, selectedObj);
+
             foreach (RoomSpawner childRoomSpawner in spawnObj.GetComponentsInChildren<RoomSpawner>())
             {
                 childRoomSpawner.spawnerId = this.spawnerId + 1;
             }
+        }
+        else
+        {
+            spawnObj = NGUITools.AddChild(transform.GetComponentInParent<Room>().transform, selectedObj);
         }
 
         spawnObj.transform.position = transform.position;
@@ -47,6 +53,7 @@ public class RoomSpawner : MonoBehaviour
 
         Destroy(gameObject, waitTime);
     }
+ 
 
     // OnTriggerEnter()의 결과에 blocked값 결정
     private GameObject SelectRoomOrWall()

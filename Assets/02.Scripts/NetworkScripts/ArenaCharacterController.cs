@@ -33,6 +33,12 @@ public class ArenaCharacterController : NetworkBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        Invoke("StartSet", 2.0f);
+    }
+
+    private void StartSet()
+    {
+        rigid.gravityScale = 5;
     }
 
     [ClientCallback]
