@@ -34,7 +34,6 @@ public class RoomTemplates : MonoBehaviour
     // 보스룸 및 특정 룸 생성 방식
     void Update()
     {
-
         if (waitTime <= 0 && spawnedBoss == false)
         {
             // 단순히 rooms[romms.Count-1].transform.position에 생성하면 안되나 ?

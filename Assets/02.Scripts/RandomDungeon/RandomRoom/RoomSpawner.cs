@@ -30,21 +30,25 @@ public class RoomSpawner : MonoBehaviour
     void Spawn()
     {
         GameObject spawnObj;
-        GameObject selectedObj = SelectRoomOrWall();
+        GameObject selectedObj = null;
 
-        // room을 생성하는 경우 생성한 roomd의 Spawner들 Id 지정
-        if (blocked == false)
+        if (blocked == true)
         {
+            selectedObj = templates.blockingWalls[openingDirection - 1];
+            spawnObj = NGUITools.AddChild(transform.GetComponentInParent<Room>().transform, selectedObj);
+
+        }
+        else
+        {
+            selectedObj = SelectWall();
+
             spawnObj = NGUITools.AddChild(templates.transform, selectedObj);
 
+            // room을 생성하는 경우 생성한 roomd의 Spawner들 Id 지정
             foreach (RoomSpawner childRoomSpawner in spawnObj.GetComponentsInChildren<RoomSpawner>())
             {
                 childRoomSpawner.spawnerId = this.spawnerId + 1;
             }
-        }
-        else
-        {
-            spawnObj = NGUITools.AddChild(transform.GetComponentInParent<Room>().transform, selectedObj);
         }
 
         spawnObj.transform.position = transform.position;
@@ -53,38 +57,23 @@ public class RoomSpawner : MonoBehaviour
 
         Destroy(gameObject, waitTime);
     }
- 
 
-    // OnTriggerEnter()의 결과에 blocked값 결정
-    private GameObject SelectRoomOrWall()
+    private GameObject SelectWall()
     {
-        GameObject selectedObj = null;
-
-        if (blocked == true)
+        switch (openingDirection)
         {
-            selectedObj = templates.blockingWalls[openingDirection - 1];
+            case 1:
+                return templates.bottomRooms[Random.Range(0, templates.bottomRooms.Length)];
+            case 2:
+                return templates.topRooms[Random.Range(0, templates.topRooms.Length)];
+            case 3:
+                return templates.leftRooms[Random.Range(0, templates.leftRooms.Length)];
+            case 4:
+                return templates.rightRooms[Random.Range(0, templates.rightRooms.Length)];
         }
-        else
-        {
-            switch (openingDirection)
-            {
-                case 1:
-                    selectedObj = templates.bottomRooms[Random.Range(0, templates.bottomRooms.Length)];
-                    break;
-                case 2:
-                    selectedObj = templates.topRooms[Random.Range(0, templates.topRooms.Length)];
-                    break;
-                case 3:
-                    selectedObj = templates.leftRooms[Random.Range(0, templates.leftRooms.Length)];
-                    break;
-                case 4:
-                    selectedObj = templates.rightRooms[Random.Range(0, templates.rightRooms.Length)];
-                    break;
-            }
-        }
-
-        return selectedObj;
+        return null;
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {

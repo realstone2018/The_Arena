@@ -36,9 +36,14 @@ public class ArenaCharacterController : NetworkBehaviour
         Invoke("StartSet", 2.0f);
     }
 
-    private void StartSet()
+    private void Start()
     {
         rigid.gravityScale = 5;
+
+        if (isLocalPlayer)
+        {
+            CinemaController.instance.SetFllowTarget(gameObject.transform);
+        }
     }
 
     [ClientCallback]
