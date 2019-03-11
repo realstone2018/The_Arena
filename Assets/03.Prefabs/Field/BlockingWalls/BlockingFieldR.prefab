@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 2113883504338249070}
   - component: {fileID: 50240048131844744}
   - component: {fileID: 66943075690773010}
+  - component: {fileID: 114280685527978734}
+  - component: {fileID: 114725763556478502}
   m_Layer: 10
   m_Name: BlockingFieldR
   m_TagString: Untagged
@@ -98,6 +100,59 @@ CompositeCollider2D:
       - {x: 17, y: -36}
       - {x: 22, y: -36}
   m_VertexDistance: 0.0005
+--- !u!114 &114280685527978734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969609114031492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 57
+    i1: 250
+    i2: 205
+    i3: 84
+    i4: 30
+    i5: 43
+    i6: 97
+    i7: 132
+    i8: 40
+    i9: 206
+    i10: 239
+    i11: 24
+    i12: 56
+    i13: 202
+    i14: 43
+    i15: 121
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114725763556478502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969609114031492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!19719996 &2113883504338249070
 TilemapCollider2D:
   m_ObjectHideFlags: 1

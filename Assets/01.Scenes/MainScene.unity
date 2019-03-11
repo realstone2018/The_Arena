@@ -2269,7 +2269,7 @@ Transform:
   m_GameObject: {fileID: 1262322421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1824.0502, y: 1080, z: 1}
+  m_LocalScale: {x: 1643.1901, y: 1080, z: 1}
   m_Children: []
   m_Father: {fileID: 1993024339}
   m_RootOrder: 1
@@ -2835,7 +2835,28 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 1
   m_OfflineScene: MainScene
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1115786260176006, guid: 84e12c207dac9cb44b79fe0c92f42989, type: 2}
+  - {fileID: 1448263046193956, guid: 819bb88d167d0f242a34d0803851c999, type: 2}
+  - {fileID: 1475625710422820, guid: 4196c6842f776a240ae8a50441cccfbf, type: 2}
+  - {fileID: 1962234696127304, guid: 05a3de07ee6588e49be9e08c380b8f16, type: 2}
+  - {fileID: 1319054733260274, guid: 18b87b0fa3d554847a548dc4a8264b0e, type: 2}
+  - {fileID: 1699159740043416, guid: 30b54018bef764143a46e03d74efec4c, type: 2}
+  - {fileID: 1452047360613886, guid: 8561cb499faf121449849f193eb388bb, type: 2}
+  - {fileID: 1124231160730126, guid: 079c7540e1578fa4e875d5da20646155, type: 2}
+  - {fileID: 1674532086193806, guid: a1097bbe0ea51d448ab1a4a5c93974b2, type: 2}
+  - {fileID: 1572740216762264, guid: 2887917daaffbd74b9dbd97565504b7d, type: 2}
+  - {fileID: 1549435644419390, guid: 2837dc316d473da46b33e4eb7b1250a1, type: 2}
+  - {fileID: 1537745109931996, guid: 5504efde963fe444398d5c7530660b74, type: 2}
+  - {fileID: 1752378662352388, guid: 4aa9309e4224fc245b6b3a76023e4294, type: 2}
+  - {fileID: 1541629232460156, guid: 5047e8df9ac8f584aadaf689f9591775, type: 2}
+  - {fileID: 1232814739924480, guid: 0ae86a87b67e76e44b9460612d64eb40, type: 2}
+  - {fileID: 1141613847537802, guid: 96b8213ddc55aa64090136d5f13dd7b7, type: 2}
+  - {fileID: 1980188213691346, guid: e59255fb5a908da4e854437eb4db029c, type: 2}
+  - {fileID: 1969609114031492, guid: 39facd541e2b618428ceef1838ca2b79, type: 2}
+  - {fileID: 1931496963112952, guid: 822a10693206bd14aa274f81111bae7d, type: 2}
+  - {fileID: 1943223575264498, guid: cd9dc631eb685784d952782a7a81f070, type: 2}
+  - {fileID: 1724630486070518, guid: e5cef4839ffc6944ba63990024ebe30d, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

@@ -171,6 +171,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4878113873753702}
   - component: {fileID: 114203089830503320}
+  - component: {fileID: 114020175992932080}
+  - component: {fileID: 114931691698847726}
   m_Layer: 10
   m_Name: FieldL
   m_TagString: Untagged
@@ -1192,6 +1194,38 @@ CompositeCollider2D:
       - {x: -35, y: 16}
       - {x: 40, y: 16}
   m_VertexDistance: 0.0005
+--- !u!114 &114020175992932080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475625710422820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 65
+    i1: 150
+    i2: 198
+    i3: 132
+    i4: 47
+    i5: 119
+    i6: 106
+    i7: 36
+    i8: 10
+    i9: 232
+    i10: 165
+    i11: 4
+    i12: 65
+    i13: 204
+    i14: 207
+    i15: 191
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114088687990151600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1203,7 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb5c19eba9f78d4181ee714e786f65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateDirection: 0
+  gateDirection: 4
 --- !u!114 &114203089830503320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1234,7 +1268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb5c19eba9f78d4181ee714e786f65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateDirection: 0
+  gateDirection: 1
 --- !u!114 &114454809202527274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1246,7 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb5c19eba9f78d4181ee714e786f65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateDirection: 0
+  gateDirection: 2
 --- !u!114 &114819050349807112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1258,7 +1292,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb5c19eba9f78d4181ee714e786f65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateDirection: 0
+  gateDirection: 3
+--- !u!114 &114931691698847726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475625710422820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!19719996 &2113883504430893392
 TilemapCollider2D:
   m_ObjectHideFlags: 1
