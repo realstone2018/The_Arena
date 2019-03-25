@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Grid : NetworkBehaviour {
+public class GridPanel : NetworkBehaviour {
 
     // 서버의 Room에서 field 생성 
     // 클라이언트의 Grid에서 Getchild()함수 사용
 
     [ServerCallback]
-    public void ServerToClient(NetworkInstanceId netID)
+    public void SetParentInClient(NetworkInstanceId netID)
     {
         RpcGetChild(netID);
     }

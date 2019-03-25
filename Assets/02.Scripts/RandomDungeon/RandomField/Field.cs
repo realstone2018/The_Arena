@@ -29,7 +29,7 @@ public class Field : NetworkBehaviour {
     public GameObject[] landforms;
 
     public int maxLRx = 9;
-    public int maxLRy = 12;
+    public int maxLRy = 30;
     public int maxTBx = 11;
     public int maxTy = 15;
     public bool bossRoom = false;
@@ -43,11 +43,6 @@ public class Field : NetworkBehaviour {
             walls[i] = transform.GetChild(i);
         }
 
-        gates = new Gate[4];
-        gates = transform.GetComponentsInChildren<Gate>();
-        // 배열을 Sort함수와 람다함수를 사용하여 moveDirection 순으로 정리 
-        System.Array.Sort<Gate>(gates, (x, y) => x.gateDirection.CompareTo(y.gateDirection));
-
         landforms = new GameObject[transform.childCount - 4];
         for (int i = 4; i < transform.childCount; i++)
         {
@@ -56,6 +51,12 @@ public class Field : NetworkBehaviour {
 
         if (isServer)
         {
+            // gate는 Server에만 존재 
+            gates = new Gate[4];
+            gates = transform.GetComponentsInChildren<Gate>();
+            // 배열을 Sort함수와 람다함수를 사용하여 gateDirection 순으로 정리 
+            System.Array.Sort<Gate>(gates, (x, y) => x.gateDirection.CompareTo(y.gateDirection));
+
             if (bossRoom == true)
                 Invoke("SetBossField", 0.1f);
             else
@@ -78,8 +79,8 @@ public class Field : NetworkBehaviour {
         walls[0].position += new Vector3(Random.Range(-maxTBx, maxTBx + 1), 0, 0); 
         walls[1].position += new Vector3(Random.Range(-maxTBx, maxTBx + 1), Random.Range(0, maxTy), 0);
         
-        // Left, Right wall의 y축 랜덤 최대값은 Top wall의 Y값 + 11 이다.  
-        maxLRy += (int)walls[1].localPosition.y + 1;
+        // Left, Right wall의 y축 랜덤 최대값은 Top wall의 Y값 +15 이다.  
+        maxLRy = (int)walls[1].localPosition.y + 15;
         walls[2].position += new Vector3(Random.Range(-maxLRx, 0), Random.Range(0, maxLRy), 0);
         walls[3].position += new Vector3(Random.Range(0, maxLRx + 1), Random.Range(0, maxLRy), 0);
 
@@ -118,8 +119,6 @@ public class Field : NetworkBehaviour {
         {
             walls[i].position = new Vector3(fieldSetValue.wallPos[i * 2], fieldSetValue.wallPos[i * 2 + 1], 0);
         }
-
-        Debug.Log("Landforms.Length : " + landforms.Length + "  fieldSetValue.ActiveLandform : " + fieldSetValue.activeLandform);
         landforms[fieldSetValue.activeLandform].SetActive(true);
     }
 
@@ -153,5 +152,13 @@ public class Field : NetworkBehaviour {
         int outDirection = (inDirection % 2 == 0 ? inDirection - 2 : inDirection);
         Debug.Log(outDirection);
         return gates[outDirection].transform.position;
+    }
+
+    public void GetGateLocalPos(Vector3[] gatePos)
+    {
+        for (int i = 0; i < gatePos.Length; i++)
+        {
+            gatePos[i] = gates[i].transform.position;
+        }
     }
 }

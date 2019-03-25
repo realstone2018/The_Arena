@@ -33,7 +33,7 @@ public class BlockingWall : NetworkBehaviour {
         NetworkServer.Spawn(createdField);
 
         GameObject gridObj = GameObject.Find("Grid");
-        gridObj.GetComponent<Grid>().ServerToClient(createdField.GetComponent<NetworkIdentity>().netId);
+        gridObj.GetComponent<GridPanel>().SetParentInClient(createdField.GetComponent<NetworkIdentity>().netId);
 
     }
 }

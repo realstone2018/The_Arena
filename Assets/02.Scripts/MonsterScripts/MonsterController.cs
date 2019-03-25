@@ -8,11 +8,11 @@ public class MonsterController : MonoBehaviour {
     
     // 몬스터마다 다른 패턴을 어떻게 구현 할까? 
     // 상속? 인터페이스?     싹다 넣어두고 ChangeMovement()함수에서 range 변위를 매개변수로 조정?
-    enum MovementFlag {Idle, Left, Right, Trace};
-    MovementFlag movementFlag = MovementFlag.Idle;
+    public enum MovementFlag {Idle, Left, Right, Trace};
+    public MovementFlag movementFlag = MovementFlag.Idle;
 
     public Animator animator;
-    bool isTracing = false;
+    public bool isTracing = false;
     public GameObject traceTarget;
 
 
@@ -54,7 +54,7 @@ public class MonsterController : MonoBehaviour {
         string dist = "";
         //bool jumping = false;
 
-        if (movementFlag == MovementFlag.Trace)
+        if (movementFlag == MovementFlag.Trace && isTracing)
         {
             Vector3 playerPos = traceTarget.transform.position;
 
@@ -85,8 +85,21 @@ public class MonsterController : MonoBehaviour {
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        transform.position += moveVelocity * moveSpeed * Time.deltaTime;
+        Vector3 rayPos = transform.position + moveVelocity * 1.5f;
+        Ray2D ray = new Ray2D(rayPos, Vector2.down);
 
+        int layerMask = 1 << LayerMask.NameToLayer("Ground");
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 3.0f, layerMask);
+
+        if (hit.collider == null)
+        {
+            Debug.Log("Nothing");
+            moveVelocity *= -1;
+        }
+        else
+            Debug.Log("start : " + rayPos + "  hit : " + hit.collider.name);
+
+        transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         SetAnimator();
     }
 
@@ -109,6 +122,7 @@ public class MonsterController : MonoBehaviour {
     {
         if(collision.CompareTag("Player"))
         {
+            Debug.Log("Collision With Player");
             isTracing = true;
             traceTarget = collision.gameObject;
 

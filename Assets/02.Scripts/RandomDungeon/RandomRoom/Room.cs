@@ -33,10 +33,8 @@ public class Room : NetworkBehaviour
 
         NetworkServer.Spawn(createdField);
 
-
         NetworkInstanceId fieldNetID = createdField.GetComponent<NetworkIdentity>().netId;
-
-        grid.GetComponent<Grid>().ServerToClient(fieldNetID);
+        grid.GetComponent<GridPanel>().SetParentInClient(fieldNetID);
     }
 
 }

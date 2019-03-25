@@ -86,19 +86,19 @@ CompositeCollider2D:
   - m_Collider: {fileID: 2113883504173775326}
     m_ColliderPaths:
     - - X: 400000000
-        Y: 160000000
+        Y: -25000000
       - X: 400000000
-        Y: 210000000
+        Y: 25000000
       - X: -350000000
-        Y: 210000000
+        Y: 25000000
       - X: -350000000
-        Y: 160000000
+        Y: -25000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 40, y: 21}
-      - {x: -35, y: 21}
-      - {x: -35, y: 16}
-      - {x: 40, y: 16}
+    - - {x: 40, y: 2.5}
+      - {x: -35, y: 2.5}
+      - {x: -35, y: -2.5}
+      - {x: 40, y: -2.5}
   m_VertexDistance: 0.0005
 --- !u!114 &114076922577102492
 MonoBehaviour:
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
+  m_TransformSyncMode: 2
   m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
+  m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
@@ -165,7 +165,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2}
 --- !u!483693784 &3664157343648137336
 TilemapRenderer:
   m_ObjectHideFlags: 1
@@ -200,7 +200,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

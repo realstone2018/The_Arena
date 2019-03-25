@@ -196,8 +196,8 @@ namespace Cinemachine
             Quaternion rot = Quaternion.Inverse(state.CorrectedOrientation);
             float dy = state.Lens.OrthographicSize;
             float dx = dy * state.Lens.Aspect;
-            Vector3 vx = (rot * Vector3.right) * dx;
-            Vector3 vy = (rot * Vector3.up) * dy;
+            Vector3 vx = (rot * Vector3.right) * dx * 0.5f;
+            Vector3 vy = (rot * Vector3.up) * dy * 0.5f;
 
             Vector3 displacement = Vector3.zero;
             Vector3 camPos = state.CorrectedPosition;
